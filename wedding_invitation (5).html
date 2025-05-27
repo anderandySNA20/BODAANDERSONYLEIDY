@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anderson & Leidy - Invitación de Boda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Dancing+Script:wght@400;500;600;700&family=Cinzel:wght@300;400;500;600;700&family=Lora:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #d4af37;
+            --secondary-gold: #f4e4bc;
+            --accent-gold: #b8860b;
+            --wine-red: #722f37;
+            --dark-wine: #5d252a;
+            --burgundy: #800020;
+            --deep-wine: #4a1c22;
+            --cream: #faf8f3;
+            --ivory: #fffef7;
+            --charcoal: #2c2c2c;
+            --warm-gray: #5a5a5a;
+            --light-gray: #f5f5f5;
+            --soft-white: #fdfdfd;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #f9f7f4 0%, #f4f1eb 50%, #ede8df 100%);
+            line-height: 1.7;
+            color: var(--charcoal);
+            overflow-x: hidden;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Elegant Background Effects */
+        .background-ornament {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--primary-gold) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, var(--accent-gold) 1px, transparent 1px);
+            background-size: 100px 100px, 150px 150px;
+            animation: ornamentFloat 20s linear infinite;
+        }
+
+        @keyframes ornamentFloat {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: particleFloat 12s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .invitation-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: var(--ivory);
+            border-radius: 12px;
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.1),
+                0 0 0 1px rgba(201, 169, 97, 0.2),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+            overflow: hidden;
+            position: relative;
+            animation: containerEntrance 1.5s ease-out;
+        }
+
+        @keyframes containerEntrance {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Elegant Border Animation */
+        .invitation-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, var(--primary-gold), transparent);
+            z-index: -1;
+            animation: borderShine 4s ease-in-out infinite;
+            border-radius: 12px;
+        }
+
+        @keyframes borderShine {
+            0%, 100% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            50% {
+                opacity: 0.3;
+                transform: translateX(100%);
+            }
+        }
+
+        /* Header Section */
+        .header-section {
+            padding: 60px 50px;
+            text-align: center;
+            background: 
+                linear-gradient(135deg, var(--ivory) 0%, var(--cream) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201,169,97,0.08) 0%, transparent 70%);
+            animation: headerGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes headerGlow {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+            50% { transform: scale(1.1) rotate(180deg); opacity: 0.8; }
+        }
+
+        .bible-quote {
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+            color: var(--warm-gray);
+            margin-bottom: 35px;
+            font-size: 18px;
+            line-height: 1.9;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+            font-weight: 400;
+            animation: textFadeIn 2s ease-out 0.5s both;
+            text-align: center;
+        }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bible-reference {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            color: var(--wine-red);
+            margin-top: 20px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Elegant Divider */
+        .decorative-divider {
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--primary-gold) 20%, var(--accent-gold) 50%, var(--primary-gold) 80%, transparent 100%);
+            margin: 45px auto;
+            position: relative;
+            animation: dividerPulse 3s ease-in-out infinite;
+        }
+
+        .decorative-divider::before,
+        .decorative-divider::after {
+            content: '❦';
+            position: absolute;
+            top: -8px;
+            color: var(--primary-gold);
+            font-size: 16px;
+            animation: ornamentSway 4s ease-in-out infinite;
+        }
+
+        .decorative-divider::before { left: -25px; }
+        .decorative-divider::after { right: -25px; animation-delay: 2s; }
+
+        @keyframes dividerPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes ornamentSway {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .couple-announcement {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            color: var(--wine-red);
+            margin: 40px 0 35px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+            animation: textFadeIn 2s ease-out 1s both;
+        }
+
+        .couple-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.5em;
+            color: var(--wine-red);
+            margin: 35px 0;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+            animation: namesGlow 2s ease-out 1.5s both;
+            text-shadow: 0 3px 12px rgba(114, 47, 55, 0.3);
+            line-height: 0.9;
+        }
+
+        @keyframes namesGlow {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+                text-shadow: 0 3px 12px rgba(114, 47, 55, 0.3);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                text-shadow: 0 5px 20px rgba(114, 47, 55, 0.4);
+            }
+        }
+
+        .couple-names:hover {
+            animation: namesHover 0.8s ease-in-out;
+        }
+
+        @keyframes namesHover {
+            0%, 100% { 
+                transform: scale(1);
+                color: var(--wine-red);
+            }
+            50% { 
+                transform: scale(1.02);
+                color: var(--primary-gold);
+            }
+        }
+
+        .blessing-text {
+            font-family: 'Crimson Text', serif;
+            color: var(--warm-gray);
+            margin: 35px 0;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            line-height: 1.7;
+            animation: textFadeIn 2s ease-out 2s both;
+        }
+
+        .parents-section {
+            margin: 40px 0;
+            position: relative;
+            z-index: 2;
+            animation: textFadeIn 2s ease-out 2.5s both;
+        }
+
+        .parents-title {
+            font-family: 'Cinzel', serif;
+            color: var(--wine-red);
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .parents-list {
+            font-family: 'Crimson Text', serif;
+            color: var(--warm-gray);
+            font-size: 17px;
+            line-height: 1.9;
+            font-weight: 400;
+        }
+
+        /* Date Section */
+        .date-section {
+            background: linear-gradient(135deg, var(--wine-red) 0%, var(--dark-wine) 100%);
+            color: white;
+            padding: 65px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .date-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: dateShimmer 4s infinite;
+        }
+
+        @keyframes dateShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .ceremony-details {
+            margin-bottom: 45px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .month-year {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            letter-spacing: 6px;
+            font-weight: 400;
+            text-transform: uppercase;
+            animation: textShine 3s ease-in-out infinite;
+        }
+
+        @keyframes textShine {
+            0%, 100% { 
+                opacity: 0.9;
+                text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            }
+            50% { 
+                opacity: 1;
+                text-shadow: 0 0 20px rgba(255,255,255,0.6);
+            }
+        }
+
+        .date-large {
+            font-family: 'Playfair Display', serif;
+            font-size: 6.5em;
+            font-weight: 800;
+            margin: 25px 0;
+            animation: dateFloat 5s ease-in-out infinite;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+            line-height: 0.8;
+        }
+
+        @keyframes dateFloat {
+            0%, 100% { 
+                transform: translateY(0px);
+                text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+            }
+            50% { 
+                transform: translateY(-8px);
+                text-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            }
+        }
+
+        .time-location {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin: 20px 0;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .venue-name {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            font-weight: 600;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: venueGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes venueGlow {
+            0%, 100% { 
+                text-shadow: 0 0 15px rgba(255,255,255,0.4);
+            }
+            50% { 
+                text-shadow: 0 0 25px rgba(255,255,255,0.7);
+            }
+        }
+
+        .buttons-section {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 45px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border: 2px solid rgba(255,255,255,0.8);
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Celebration Section */
+        .celebration-section {
+            background: linear-gradient(135deg, var(--wine-red) 0%, var(--dark-wine) 100%);
+            color: white;
+            padding: 65px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .celebration-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            animation: celebrationBg 10s ease-in-out infinite;
+        }
+
+        @keyframes celebrationBg {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.05); }
+        }
+
+        .celebration-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.2em;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+            animation: titleSway 8s ease-in-out infinite;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-weight: 600;
+        }
+
+        @keyframes titleSway {
+            0%, 100% { 
+                transform: translateX(0px);
+                text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            25% { 
+                transform: translateX(5px);
+                text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            }
+            75% { 
+                transform: translateX(-5px);
+                text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            }
+        }
+
+        .celebration-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            margin-bottom: 35px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+            font-weight: 400;
+        }
+
+        .reception-venue {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 35px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 2;
+            animation: venueFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes venueFloat {
+            0%, 100% { 
+                transform: translateY(0px);
+                text-shadow: 0 0 15px rgba(255,255,255,0.3);
+            }
+            50% { 
+                transform: translateY(-5px);
+                text-shadow: 0 0 25px rgba(255,255,255,0.5);
+            }
+        }
+
+        .address {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            margin: 20px 0 45px;
+            position: relative;
+            z-index: 2;
+            font-weight: 500;
+        }
+
+        .dress-code {
+            font-family: 'Crimson Text', serif;
+            font-size: 17px;
+            font-style: italic;
+            background: rgba(255,255,255,0.12);
+            padding: 32px;
+            border-radius: 15px;
+            margin-top: 35px;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            animation: dressCodeGlow 5s ease-in-out infinite;
+            line-height: 1.7;
+        }
+
+        @keyframes dressCodeGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255,255,255,0.1);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(255,255,255,0.2);
+            }
+        }
+
+        /* Gifts Section */
+        .gifts-section {
+            padding: 65px 50px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--ivory) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gifts-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(201,169,97,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(184,134,11,0.06) 0%, transparent 50%);
+            animation: giftsBackground 12s ease-in-out infinite;
+        }
+
+        @keyframes giftsBackground {
+            0%, 100% { opacity: 0.7; transform: rotate(0deg); }
+            50% { opacity: 1; transform: rotate(180deg); }
+        }
+
+        .gifts-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5em;
+            color: var(--wine-red);
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+            animation: giftsTitle 4s ease-in-out infinite;
+            text-shadow: 0 3px 15px rgba(114, 47, 55, 0.3);
+            font-weight: 700;
+        }
+
+        @keyframes giftsTitle {
+            0%, 100% { 
+                transform: scale(1);
+                color: var(--wine-red);
+            }
+            50% { 
+                transform: scale(1.02);
+                color: var(--primary-gold);
+            }
+        }
+
+        .gifts-text {
+            font-family: 'Crimson Text', serif;
+            color: var(--warm-gray);
+            margin-bottom: 45px;
+            font-size: 18px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+            font-weight: 400;
+        }
+
+        .gifts-details {
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.08),
+                0 0 0 1px rgba(201, 169, 97, 0.1);
+            margin-top: 35px;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+            animation: giftsDetailsFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes giftsDetailsFloat {
+            0%, 100% { 
+                transform: translateY(0px);
+                box-shadow: 
+                    0 15px 35px rgba(0,0,0,0.08),
+                    0 0 0 1px rgba(201, 169, 97, 0.1);
+            }
+            50% { 
+                transform: translateY(-5px);
+                box-shadow: 
+                    0 20px 45px rgba(0,0,0,0.12),
+                    0 0 0 1px rgba(201, 169, 97, 0.2);
+            }
+        }
+
+        .gifts-details h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--wine-red);
+            margin-bottom: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .account-info {
+            background: linear-gradient(135deg, var(--soft-white) 0%, #f9f9f9 100%);
+            padding: 28px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 17px;
+            color: var(--charcoal);
+            border-left: 4px solid var(--primary-gold);
+            transition: all 0.3s ease;
+            font-weight: 400;
+            line-height: 1.7;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .account-info:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #ffffff 0%, #fcfcfc 100%);
+        }
+
+        .account-info strong {
+            color: var(--wine-red);
+            font-weight: 600;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .invitation-container {
+                margin: 20px 15px;
+                border-radius: 10px;
+            }
+            
+            .couple-names {
+                font-size: 3.8em;
+            }
+            
+            .date-large {
+                font-size: 4.5em;
+            }
+            
+            .celebration-title, .gifts-title {
+                font-size: 3em;
+            }
+            
+            .buttons-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .header-section, .date-section, .celebration-section, .gifts-section {
+                padding: 45px 30px;
+            }
+            
+            .gifts-details {
+                padding: 30px;
+            }
+
+            .month-year {
+                font-size: 18px;
+                letter-spacing: 4px;
+            }
+
+            .venue-name {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .reception-venue {
+                font-size: 22px;
+                letter-spacing: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .couple-names {
+                font-size: 3.2em;
+            }
+            
+            .date-large {
+                font-size: 3.8em;
+            }
+            
+            .celebration-title, .gifts-title {
+                font-size: 2.5em;
+            }
+            
+            .header-section, .date-section, .celebration-section, .gifts-section {
+                padding: 35px 20px;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection Styling */
+        ::selection {
+            background: var(--secondary-gold);
+            color: var(--dark-brown);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="background-ornament"></div>
+    <div class="particles"></div>
+
+    <div class="invitation-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="bible-quote">
+                "Dios unió nuestras vidas en el momento perfecto, porque más valen dos que uno: juntos somos el mejor equipo y obtenemos más fruto de nuestro esfuerzo. Si uno cae, el otro lo levanta. Por eso queremos que seas parte de este gran día."
+                <div class="bible-reference">Eclesiastés 4:9-10</div>
+            </div>
+            
+            <div class="decorative-divider"></div>
+            
+            <div class="couple-announcement">Nos Casamos</div>
+            
+            <div class="couple-names">Anderson & Leidy</div>
+            
+            <div class="blessing-text">Con la bendición de Dios y nuestros padres</div>
+            
+            <div class="parents-section">
+                <div class="parents-title">Padrinos</div>
+                <div class="parents-list">
+                    Leonardo Cabrera Huaman<br>
+                    Sandra María Pérez Cano<br>
+                    Román Choque Choque<br>
+                    Marina Paulina Mamani Choquehuanca
+                </div>
+            </div>
+            
+            <div class="parents-section">
+                <div class="parents-title">Y en compañía de nuestros padrinos</div>
+                <div class="parents-list">
+                    Moisés Andrés Lazo Vásquez<br>
+                    Aryana Isbieta Palomino Acurio<br>
+                    Abel Ángel Sullón Macalupu<br>
+                    Milva Gutiérrez Quispe
+                </div>
+            </div>
+        </div>
+
+        <!-- Date Section -->
+        <div class="date-section">
+            <div class="ceremony-details">
+                <div class="month-year">Julio</div>
+                <div class="date-large">27</div>
+                <div class="month-year">Domingo</div>
+                <div class="time-location">11:00 A.M.</div>
+                <div class="time-location">Ceremonia Civil y Religiosa</div>
+                <div class="venue-name">Local Hacienda Dorada</div>
+            </div>
+            
+            <div class="buttons-section">
+                <a href="https://www.google.com/maps/place/Hacienda+Dorada/@-16.4824698,-71.5250757,17z/data=!3m1!4b1!4m6!3m5!1s0x9143b5a1743d2725:0xa90b9796c1343312!8m2!3d-16.4824698!4d-71.5250757!16s%2Fg%2F11sh4hlgsw?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">¿Cómo llegar?</a>
+                <a href="https://api.whatsapp.com/send/?phone=%2B51931479057&text=Hola%2C+estoy+encantado%2Fa+de+confirmarte+mi+asistencia+al+matrimonio.+Gracias+por+la+invitación.+Estoy+muy+feliz+de+poder+acompañarlos+en+un+día+tan+especial.&type=phone_number&app_absent=0" target="_blank" class="btn">Confirmar Asistencia</a>
+            </div>
+        </div>
+
+        <!-- Celebration Section -->
+        <div class="celebration-section">
+            <div class="celebration-title">Celebremos</div>
+            
+            <div class="celebration-text">
+                Después de la ceremonia, te esperamos<br>
+                para seguir festejando en:
+            </div>
+            
+            <div class="reception-venue">Local Hacienda Dorada</div>
+            <div class="address">Av. Salaverry 107 - Socabaya</div>
+            
+            <div class="dress-code">
+                <strong>"Para que disfrutes al máximo, te sugerimos asistir sin niños."</strong><br><br>
+                <strong>Código de vestimenta:</strong> Etiqueta elegante
+            </div>
+        </div>
+
+        <!-- Gifts Section -->
+        <div class="gifts-section">
+            <div class="gifts-title">Regalos</div>
+            
+            <div class="gifts-text">
+                ¡Vuestra presencia y buenos deseos serán nuestro mejor regalo!<br>
+                Sin embargo, si estás considerando hacernos un obsequio,<br>
+                te brindamos la siguiente información:
+            </div>
+            
+            <div class="gifts-details">
+                <h4>📍 Dirección de entrega de regalos físicos</h4>
+                <div class="account-info">
+                    Majes-Pedregal C-3 MzD lote 06
+                </div>
+                
+                <h4>🏦 Números de cuenta</h4>
+                <div class="account-info">
+                    <strong>Banco de la Nación</strong><br>
+                    Cuenta: 04-118-862460<br>
+                    CCI: 018-141-004118862460-29
+                </div>
+                
+                <div class="account-info">
+                    <strong>Interbank</strong><br>
+                    Cuenta: 323 3249091154<br>
+                    CCI: 00332301324909115433
+                </div>
+                
+                <div class="account-info">
+                    <strong>📱 Transferencias móviles</strong><br>
+                    <strong>Yape:</strong> 957 772 306<br>
+                    <strong>Plin:</strong> 921 076 163
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create elegant floating particles
+        function createParticles() {
+            const particles = document.querySelector('.particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 12 + 's';
+                particle.style.animationDuration = (Math.random() * 8 + 10) + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Smooth scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Add hover effects to interactive elements
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translateY(-3px) scale(1.02)';
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click effect to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = btn.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255,255,255,0.6);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    pointer-events: none;
+                `;
+                
+                btn.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Initialize
+        createParticles();
+
+        // Enhanced text shimmer effect
+        const textElements = document.querySelectorAll('.couple-names, .date-large, .celebration-title, .gifts-title');
+        textElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                element.style.animation = 'none';
+                element.offsetHeight; // Trigger reflow
+                element.style.animation = null;
+            });
+        });
+
+        // Smooth entrance animation for sections
+        const sections = document.querySelectorAll('.header-section, .date-section, .celebration-section, .gifts-section');
+        sections.forEach((section, index) => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                section.style.transition = 'all 1s ease-out';
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+    </script>
+
+    <style>
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>
